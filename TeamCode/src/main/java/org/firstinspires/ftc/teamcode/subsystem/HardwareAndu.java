@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode;
+package org.firstinspires.ftc.teamcode.subsystem;
 
 import com.acmerobotics.dashboard.config.Config;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -63,9 +63,6 @@ public class HardwareAndu {
         try {
             brat.loop();
         } catch (Exception ignored) {}
-        try {
-            drive.loop();
-        } catch (Exception ignored) {}
     }
 
     public void read(BratSubsystem brat, DriveSubsystem drive, IntakeSubsystem intake){
@@ -79,14 +76,11 @@ public class HardwareAndu {
             brat.write();
         } catch (Exception ignored) {}
         try {
-            drive.write();
-        } catch (Exception ignored) {}
-        try {
             intake.write();
         } catch (Exception e){}
-        try{
-            axon.write();
-        }catch (Exception ignored){}
+        //try{
+            //axon.write();
+        //}catch (Exception ignored){}
 
     }
 
