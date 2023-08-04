@@ -18,6 +18,7 @@ public class OpMode extends CommandOpMode {
     private AxonSubsystem axon;
     private boolean rumble = true;
 
+    @Override
     public void initialize(){
 
         robot.init(hardwareMap, telemetry);
