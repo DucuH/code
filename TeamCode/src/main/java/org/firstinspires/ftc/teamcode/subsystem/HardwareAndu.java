@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode.subsystem;
 
 import com.acmerobotics.dashboard.config.Config;
+import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
@@ -15,6 +16,10 @@ public class HardwareAndu {
     public DcMotorEx FataDr;
     public DcMotorEx SpateDr;
     public DcMotorEx SpateSt;
+    public CRServo ServoFataSt;
+    public CRServo ServoFataDr;
+    public CRServo ServoSpateSt;
+    public CRServo ServoSpateDr;
     public DcMotorEx Brat;
     public Servo Intake;
     public Servo AxonServo;
@@ -51,6 +56,11 @@ public class HardwareAndu {
         SpateSt.setDirection(DcMotorSimple.Direction.REVERSE);
 
         SpateDr= hardwareMap.get(DcMotorEx.class, "SpateDr");
+
+        ServoFataSt= hardwareMap.get(CRServo.class, "ServoFataSt");
+        ServoFataDr= hardwareMap.get(CRServo.class, "ServoFataDr");
+        ServoSpateSt= hardwareMap.get(CRServo.class, "ServoSpateSt");
+        ServoSpateDr= hardwareMap.get(CRServo.class, "ServoSpateDr");
 
         Brat = hardwareMap.get(DcMotorEx.class, "Brat");
         Brat.setDirection(DcMotorSimple.Direction.REVERSE);
