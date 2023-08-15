@@ -14,6 +14,9 @@ public class OpModeSavu extends OpModeTemplate {
         initHardware(false);
         new GamepadButton(secondaryGamepad, GamepadKeys.Button.DPAD_UP).whenPressed(axon::increaseTilt);
         new GamepadButton(secondaryGamepad, GamepadKeys.Button.DPAD_DOWN).whenPressed(axon::decreaseTilt);
+        new Trigger(() -> gamepad1.dpad_down).whenActive(axon::decreaseTilt);
+        new Trigger(() -> gamepad1.dpad_up).whenActive(axon::increaseTilt);
+
         //new GamepadButton(secondaryGamepad, GamepadKeys.Button.LEFT_BUMPER).whenPressed(() -> );
     }
 
