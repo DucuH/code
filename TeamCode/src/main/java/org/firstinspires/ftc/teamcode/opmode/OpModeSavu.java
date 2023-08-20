@@ -16,6 +16,10 @@ public class OpModeSavu extends OpModeTemplate {
         new GamepadButton(secondaryGamepad, GamepadKeys.Button.DPAD_DOWN).whenPressed(axon::decreaseTilt);
         new Trigger(() -> gamepad1.dpad_down).whenActive(axon::decreaseTilt);
         new Trigger(() -> gamepad1.dpad_up).whenActive(axon::increaseTilt);
+        new GamepadButton(secondaryGamepad, GamepadKeys.Button.A).whenPressed(brat::BratUp);
+        new GamepadButton(secondaryGamepad, GamepadKeys.Button.B).whenPressed(brat::BratDown);
+        new GamepadButton(driverGamepad, GamepadKeys.Button.A).whenPressed(intake::IntakeOpen);
+        new GamepadButton(driverGamepad, GamepadKeys.Button.B).whenPressed(intake::IntakeClose);
 
         //new GamepadButton(secondaryGamepad, GamepadKeys.Button.LEFT_BUMPER).whenPressed(() -> );
     }
@@ -45,8 +49,8 @@ public class OpModeSavu extends OpModeTemplate {
             rumble = true;
         }
 
-        if(gamepad1.a) brat.up();
-        if(gamepad1.b) brat.down();
+        //if(gamepad1.a) brat.BratUp();
+        //if(gamepad1.b) brat.BratDown();
 
 
         //robot.loop(brat, drive, intake);
@@ -69,5 +73,7 @@ public class OpModeSavu extends OpModeTemplate {
         );
         mecanumDrive.update();
         Pose2d poseEstimate=mecanumDrive.getPoseEstimate();
+
+        brat.BratController(gamepad2.right_stick_y);
     }
 }

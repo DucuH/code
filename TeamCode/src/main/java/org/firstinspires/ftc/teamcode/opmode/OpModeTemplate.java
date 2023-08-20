@@ -7,18 +7,20 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 import org.firstinspires.ftc.teamcode.drive.SampleMecanumDrive;
 import org.firstinspires.ftc.teamcode.subsystem.AxonSubsystem;
 import org.firstinspires.ftc.teamcode.subsystem.BratSubsystem;
+import org.firstinspires.ftc.teamcode.subsystem.BratSubsystem2;
 import org.firstinspires.ftc.teamcode.subsystem.DriveSubsystem;
 import org.firstinspires.ftc.teamcode.subsystem.HardwareAndu;
 import org.firstinspires.ftc.teamcode.subsystem.IntakeSubsystem;
+import org.firstinspires.ftc.teamcode.subsystem.IntakeSubsystem2;
 
 abstract public class OpModeTemplate extends CommandOpMode {
 
     protected HardwareAndu robot = new HardwareAndu();
     protected SampleMecanumDrive mecanumDrive;
     protected ElapsedTime timer;
-    protected BratSubsystem brat;
+    protected BratSubsystem2 brat;
     protected DriveSubsystem drive;
-    protected IntakeSubsystem intake;
+    protected IntakeSubsystem2 intake;
     protected AxonSubsystem axon;
     protected GamepadEx driverGamepad;
     protected GamepadEx secondaryGamepad;
@@ -31,8 +33,8 @@ abstract public class OpModeTemplate extends CommandOpMode {
         // Example: bart= new BratSubsystem(robot, isAuto);
         robot.init(hardwareMap, telemetry);
         mecanumDrive = new SampleMecanumDrive(hardwareMap);
-        brat = new BratSubsystem(robot);
-        intake = new IntakeSubsystem(robot);
+        brat = new BratSubsystem2(robot);
+        intake = new IntakeSubsystem2(robot);
         axon = new AxonSubsystem(robot);
 
         register(brat, intake, axon);
