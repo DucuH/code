@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.Range;
 
-import org.firstinspires.ftc.teamcode.subsystem.HardwareAndu;
+import org.firstinspires.ftc.teamcode.subsystems.HardwareAndu;
 
 @TeleOp(name="test")
 public class TEST extends LinearOpMode {

@@ -32,7 +32,6 @@ public class OpModeSavu extends OpModeTemplate {
 
             timer = new ElapsedTime();
             try {
-                robot.reset();
             } catch (Exception e) {
             }
         }
