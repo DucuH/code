@@ -62,9 +62,10 @@ public class HardwareAndu {
 
     public void loop(Pose2d Pose, DriveTrain drive){
         try {
-            if (drive != null) {
-                drive.set(drive);//de facut: DriveTrain si SwerveModule (fa cu mine!)
+            if (Pose != null) {
+                drive.calculate(Pose);
             }
+            drive.updateAllModules();
         } catch (Exception ignored) {}
     }
 
